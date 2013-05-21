@@ -1,0 +1,19 @@
+Source: whatpulse
+Section: non-free/web
+Priority: extra
+Maintainer: Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.4
+Homepage: http://www.whatpulse.org/
+Vcs-Browser: https://github.com/oxan/whatpulse-debian
+Vcs-Git: https://github.com/oxan/whatpulse-debian.git
+
+Package: whatpulse
+Architecture: amd64 i386
+Multi-Arch: foreign
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: discover and track your keyboard, mouse and network usage
+ This is the WhatPulse client for Linux. WhatPulse is a program to track your 
+ keyboard, mouse and network usage and history. You can 'pulse' your usage to 
+ the website, where you can compare your statistics with that of your friends. 
+ You can also join a team and compete with other people.

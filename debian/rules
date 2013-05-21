@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+# The sed option can be removed once we have dpkg 1.17.0 with --show-field everywhere
+VERSION	:= $(shell dpkg-parsechangelog | sed -n 's/^Version: \(.*\)-[^-]*$$/\1/p')
+
+ifeq ($(DEB_HOST_ARCH), amd64)
+SOURCE	:= 64bit
+else
+SOURCE	:= 32bit
+endif
+
+%:
+	dh $@ --without
+
+override_dh_auto_build:
+	tar xvzf whatpulse-linux-debian-$(SOURCE)-$(VERSION).tar.gz > extracted-files
+
+override_dh_clean:
+	test -e extracted-files && rm -f extracted-files $$(cat extracted-files) || true
+	dh_clean
+	
