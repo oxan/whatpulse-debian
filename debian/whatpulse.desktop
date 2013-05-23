@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=WhatPulse
+GenericName=Statistics collector
+Comment=All you need to know everything about your computing habits
+Exec=/usr/bin/whatpulse
+Terminal=false
+Type=Application
+Icon=/usr/share/whatpulse/logo.png
+Categories=Network;Statistics;
+StartupNotify=false
