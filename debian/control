@@ -11,7 +11,7 @@ Vcs-Git: https://github.com/oxan/whatpulse-debian.git
 Package: whatpulse
 Architecture: amd64 i386
 Multi-Arch: foreign
-Depends: ${shlibs:Depends}, ${misc:Depends}, debconf, adduser, libcap2-bin
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, libcap2-bin
 Recommends: udev
 Description: discover and track your keyboard, mouse and network usage
  This is the WhatPulse client for Linux. WhatPulse is a program to track your 
