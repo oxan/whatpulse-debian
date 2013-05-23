@@ -1,0 +1,46 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+. /usr/share/debconf/confmodule
+
+db_get whatpulse/users-in-input-group
+if [ "$RET" != "" ]; then
+   if getent group input >/dev/null 2>&1; then
+      echo "Group input already exists, skipping..."
+   else
+      addgroup --system input
+      echo "Created group input"
+   fi
+
+   for name in $RET; do
+      if ! getent passwd $name >/dev/null 2>&1; then
+         echo "User $name doesn't exist, skipping..."
+      else
+         adduser $name input
+      fi
+   done
+
+   if [ -e /etc/udev/rules.d/99-whatpulse-input.rules ]; then
+      echo "udev rule already setup, skipping..."
+   else
+      echo "KERNEL==\"event*\",       NAME=\"input/%k\", MODE=\"640\", GROUP=\"input\"" >> /etc/udev/rules.d/99-whatpulse-input.rules
+      if [ $? != 0 ] ; then
+         echo "An error occured while creating the udev rule file. Please manually check /etc/udev/rules.d/99-whatpulse-input.rules"
+      else
+         echo "udev rule has been set up."
+      fi
+   fi
+
+   chgrp input /dev/input/event*
+   chmod 0640 /dev/input/event*
+fi
+
+db_get whatpulse/allow-network-sniffing
+if [ "$RET" = "true" ]; then
+   setcap cap_net_raw,cap_net_admin=eip /usr/bin/whatpulse
+else
+   setcap -r /usr/bin/whatpulse
+fi

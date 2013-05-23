@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+test -e /etc/udev/rules.d/99-whatpulse-input.rules && rm -f /etc/udev/rules.d/99-whatpulse-input.rules
+
+db_get whatpulse/users-in-input-group
+if [ "$RET" != "" ]; then
+   if getent group input >/dev/null 2>&1; then
+      for name in $RET; do
+         deluser $name input || true
+      done
+
+      groupdel input
+      echo "Removed group input"
+   fi
+fi
+
+#DEBHELPER#

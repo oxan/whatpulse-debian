@@ -1,0 +1,32 @@
+Template: whatpulse/users-in-input-group
+Type: string
+Description: Users that will granted access to read input events:
+ WhatPulse reads the pressed keys and clicks directly from the appropriate 
+ kernel interface, the /dev/input/event devices. However, by default regular
+ user accounts aren't allowed to use this interface, since all keypresses and
+ mouse movements on this computer can be intercepted using this interface. 
+ .
+ For WhatPulse to work, the permissions on this interface need to be changed. 
+ The installer can automatically create a new group named 'input', grant that
+ group access to the interface and add some users to it. This results in 
+ slightly degrated security, since all applications started by these users can 
+ then intercept all keypresses, but is required for WhatPulse to function.
+ .
+ Enter the users that should be added to this group in a space-separated list. 
+ Usually, you should list at least your own username here. If you don't want
+ the installer to automatically setup permissions, leave this field empty. In
+ that case, you will need to manually configure permissions before you can use
+ WhatPulse.
+
+Template: whatpulse/allow-network-sniffing
+Type: boolean
+Default: false
+Description: Do you want to allow WhatPulse to intercept all network traffic?
+ WhatPulse can track your bandwidth usage. For this to function, WhatPulse
+ needs to be granted permission to intercept all network traffic on this
+ computer, including sensitive data such as passwords.
+ .
+ If you accept this, only WhatPulse will be allowed to intercept all network
+ traffic from this machine. If you don't accept this, no permissions will be
+ granted. WhatPulse will still function, but bandwidth tracking won't be 
+ available.
