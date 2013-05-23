@@ -1,0 +1,12 @@
+# temporary files created by debhelper
+debian/*.debhelper.log
+debian/*.substvars
+debian/files
+debian/patches/
+debian/whatpulse/
+
+# files created by extracting upstream tarball during build process
+extracted-files
+README.txt
+setup-input-permissions.sh
+whatpulse
