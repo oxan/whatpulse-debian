@@ -4,8 +4,11 @@ Upstream-Contact: http://forum.whatpulse.org/forums/
 Source: http://www.whatpulse.org/
 
 Files: *
-Copyright: TODO
-License: TODO
+Copyright: (C) 2013 WhatPulse
+License: Closed-Source
+ WhatPulse is distributed as closed source freeware, which may be used
+ free of charge. It is provided as an pre-compiled binary, without the
+ source code.
 
 Files: debian/*
 Copyright: 2013, Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>
