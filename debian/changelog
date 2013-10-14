@@ -6,10 +6,6 @@ whatpulse (2.2.1-1) UNRELEASED; urgency=low
     doesn't have any capabilities.
   * Don't remove and recreate input group on every upgrade.
   * Install desktop file in correct directory
-  * Work around WhatPulse' dependency on libcrypto.so by locating the
-    destination of this symlink at build time, recreating it in a private
-    directory, and replacing the binary with a script that sets LD_LIBRARY_PATH
-    to this directory. This avoids a dependency on the libssl-dev package.
 
  -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Mon, 14 Oct 2013 15:45:35 +0200
 
