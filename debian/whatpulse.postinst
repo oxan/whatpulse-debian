@@ -4,6 +4,10 @@ set -e
 
 #DEBHELPER#
 
+if [ "$1" != "configure" ]; then
+   exit 0
+fi
+
 . /usr/share/debconf/confmodule
 
 db_get whatpulse/users-in-input-group
@@ -12,12 +16,14 @@ if [ "$RET" != "" ]; then
       echo "Group input already exists, skipping..."
    else
       addgroup --system input
-      echo "Created group input"
+      echo "Created group input."
    fi
 
    for name in $RET; do
       if ! getent passwd $name >/dev/null 2>&1; then
          echo "User $name doesn't exist, skipping..."
+      elif [ -n "$(id -gn $name | grep input)" ]; then
+         echo "User $name is already a member of the group input."
       else
          adduser $name input
       fi
@@ -26,7 +32,7 @@ if [ "$RET" != "" ]; then
    if [ -e /etc/udev/rules.d/99-whatpulse-input.rules ]; then
       echo "udev rule already setup, skipping..."
    else
-      echo "KERNEL==\"event*\",       NAME=\"input/%k\", MODE=\"640\", GROUP=\"input\"" >> /etc/udev/rules.d/99-whatpulse-input.rules
+      echo "KERNEL==\"event*\",       NAME=\"input/%k\", MODE=\"640\", GROUP=\"input\"" > /etc/udev/rules.d/99-whatpulse-input.rules
       if [ $? != 0 ] ; then
          echo "An error occured while creating the udev rule file. Please manually check /etc/udev/rules.d/99-whatpulse-input.rules"
       else
