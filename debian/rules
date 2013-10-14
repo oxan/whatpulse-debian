@@ -18,4 +18,12 @@ override_dh_auto_build:
 override_dh_clean:
 	test -e extracted-files && rm -f extracted-files $$(cat extracted-files) || true
 	dh_clean
-	
+
+override_dh_install:
+	install -m 0755 debian/wrapper debian/whatpulse/usr/bin/whatpulse
+	dh_install
+
+override_dh_link:
+	dh_link $$(readlink -f /usr/lib/$$DEB_HOST_MULTIARCH/libcrypto.so) usr/lib/whatpulse/libcrypto.so
+	echo "ssl:Depends=$$(dpkg -S $$(readlink -f /usr/lib/$$DEB_HOST_MULTIARCH/libcrypto.so) | cut -d":" -f1)" >> debian/whatpulse.substvars
+	dh_link
