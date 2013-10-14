@@ -5,6 +5,7 @@ whatpulse (2.2.1-1) UNRELEASED; urgency=low
   * Fix removal of capabilities on first run of postinst script, when the binary
     doesn't have any capabilities.
   * Don't remove and recreate input group on every upgrade.
+  * Install desktop file in correct directory
 
  -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Mon, 14 Oct 2013 15:45:35 +0200
 
