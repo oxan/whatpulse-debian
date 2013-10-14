@@ -6,6 +6,8 @@ whatpulse (2.2.1-1) UNRELEASED; urgency=low
     doesn't have any capabilities.
   * Don't remove and recreate input group on every upgrade.
   * Install desktop file in correct directory
+  * Add dependency on libssl-dev, because it loads the libcrypto.so library 
+    (without a SONAME in the filename).
 
  -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Mon, 14 Oct 2013 15:45:35 +0200
 
