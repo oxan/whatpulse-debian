@@ -1,3 +1,9 @@
+whatpulse (2.2.1-1) UNRELEASED; urgency=low
+
+  * New upstream release
+
+ -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Mon, 14 Oct 2013 15:20:09 +0200
+
 whatpulse (2.1.1-1) unstable; urgency=low
 
   * Initial release.
