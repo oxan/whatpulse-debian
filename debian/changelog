@@ -2,6 +2,8 @@ whatpulse (2.2.1-1) UNRELEASED; urgency=low
 
   * New upstream release
   * Add libx11-6 to Build-Depends
+  * Fix removal of capabilities on first run of postinst script, when the binary
+    doesn't have any capabilities.
 
  -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Mon, 14 Oct 2013 15:20:09 +0200
 
