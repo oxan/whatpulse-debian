@@ -1,3 +1,15 @@
+whatpulse (2.3-1) UNRELEASED; urgency=low
+
+  * New upstream release
+    + Fix remaining client crashes
+    + Allow GeoIP downloads on computers using non-standard charsets
+    + Improve CPU usage by 20% and memory usage by 40%
+    + Smoother update of the geek window
+    + Ignore dead center clicks in the mouse heat map
+    + If pulse on double click is disabled, open the main window on double click
+
+ -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Sat, 30 Nov 2013 16:06:32 +0100
+
 whatpulse (2.3~b1-1) experimental; urgency=low
 
   * New upstream release
