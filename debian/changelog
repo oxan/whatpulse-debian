@@ -1,3 +1,18 @@
+whatpulse (2.3~b1-1) experimental; urgency=low
+
+  * New upstream release
+    + Support for dvorak and azerty keyboard layouts in the heat map
+    + Pulse new applications more often (when enabled)
+    + Reduce amount of background workers (should reduce crashes)
+    + Optimize bandwidth collector (improve performance in high-bandwidth cases)
+    + Remove memory leak when disabling and re-enabling statistics manually
+    + Fix crash on client exit
+    + Fix incorrect counting of bandwidth (missing a few bytes)
+    + Fix empty process details on some systems
+  * Extract "normal" Linux tarballs, as these seem to work on Debian too now
+
+ -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Sun, 17 Nov 2013 17:33:16 +0100
+
 whatpulse (2.2.1-1) unstable; urgency=low
 
   * New upstream release
