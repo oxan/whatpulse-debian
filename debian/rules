@@ -12,7 +12,7 @@ endif
 	dh $@
 
 override_dh_auto_build:
-	tar xvzf whatpulse-linux-$(SOURCE)-$(VERSION).tar.gz > extracted-files
+	tar xvzf whatpulse-linux-debian-$(SOURCE)-$(VERSION).tar.gz > extracted-files
 
 override_dh_clean:
 	test -e extracted-files && rm -f extracted-files $$(cat extracted-files) || true
