@@ -1,4 +1,4 @@
-whatpulse (2.3-1) UNRELEASED; urgency=low
+whatpulse (2.3-1) unstable; urgency=low
 
   * New upstream release
     + Fix remaining client crashes
@@ -9,7 +9,7 @@ whatpulse (2.3-1) UNRELEASED; urgency=low
     + If pulse on double click is disabled, open the main window on double click
   * Switch back to Debian-specific tarballs, as those also work on Wheezy
 
- -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Sat, 30 Nov 2013 16:06:32 +0100
+ -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Sun, 08 Dec 2013 21:28:15 +0100
 
 whatpulse (2.3~b1-1) experimental; urgency=low
 
