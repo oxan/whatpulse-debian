@@ -6,5 +6,5 @@ Exec=/usr/bin/whatpulse
 Terminal=false
 Type=Application
 Icon=/usr/share/whatpulse/logo.png
-Categories=Network;Statistics;
+Categories=Network;DataVisualization;
 StartupNotify=false

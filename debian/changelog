@@ -5,6 +5,7 @@ whatpulse (2.4-1) UNRELEASED; urgency=medium
     + Option to autopulse every hour
     + Performance and usability improvements
   * Bump Standards-Version to 3.9.5, no changes needed
+  * Drop invalid Statistics category from .desktop file
 
  -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Fri, 18 Apr 2014 17:30:12 +0200
 
