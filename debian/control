@@ -3,7 +3,7 @@ Section: non-free/web
 Priority: extra
 Maintainer: Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>
 Build-Depends: debhelper (>= 9), libqtcore4, libqtgui4, libqtwebkit4, libqt4-sql, libqt4-script, libqt4-network, libsqlite3-0, libx11-6
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://www.whatpulse.org/
 Vcs-Browser: https://github.com/oxan/whatpulse-debian
 Vcs-Git: https://github.com/oxan/whatpulse-debian.git

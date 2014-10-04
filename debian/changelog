@@ -1,3 +1,13 @@
+whatpulse (2.4.1-1) unstable; urgency=medium
+
+  * New upstream release
+    + Show input rates in the geek window
+    + Upgrade to Qt5
+    + Optionally remove mouse points older than 3 months to save database space
+  * Bump Standards-Version to 3.9.6, no changes needed
+
+ -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Sat, 04 Oct 2014 17:20:15 +0200
+
 whatpulse (2.4-1) unstable; urgency=medium
 
   * New upstream release
