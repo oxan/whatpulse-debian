@@ -1,3 +1,13 @@
+whatpulse (2.5-1) unstable; urgency=medium
+
+  * New upstream release
+    + Track statistics per mouse button
+    + Ignore specific network interfaces for monitoring
+    + Local stats are kept through a re-login
+    + Fix text color when using black themes.
+
+ -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Sat, 20 Dec 2014 16:55:16 +0100
+
 whatpulse (2.4.1-1) unstable; urgency=medium
 
   * New upstream release
