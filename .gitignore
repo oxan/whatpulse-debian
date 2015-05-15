@@ -8,5 +8,6 @@ debian/whatpulse/
 # files created by extracting upstream tarball during build process
 extracted-files
 README.txt
+pcap_permissions.txt
 setup-input-permissions.sh
 whatpulse
