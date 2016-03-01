@@ -12,9 +12,11 @@ endif
 	dh $@
 
 override_dh_auto_build:
-	tar xvzf whatpulse-linux-debian-$(SOURCE)-$(VERSION).tar.gz > extracted-files
+	# Apparantly these files are doubly compressed...
+	gunzip -c whatpulse-linux-debian-$(SOURCE)-$(VERSION).tar.gz > whatpulse-linux-debian-$(SOURCE)-$(VERSION)-intermediate.tar.gz
+	tar xvzf whatpulse-linux-debian-$(SOURCE)-$(VERSION)-intermediate.tar.gz > extracted-files
 
 override_dh_clean:
 	test -e extracted-files && rm -f extracted-files $$(cat extracted-files) || true
+	rm -f whatpulse-linux-debian-$(SOURCE)-$(VERSION)-intermediate.tar.gz
 	dh_clean
-	

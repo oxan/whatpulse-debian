@@ -1,6 +1,7 @@
 whatpulse (2.7-1) unstable; urgency=medium
 
   * New upstream release
+    + Adapt debian/rules for the double compressed source archives
 
  -- Oxan van Leeuwen <oxan@oxanvanleeuwen.nl>  Tue, 01 Mar 2016 22:10:30 +0100
 
